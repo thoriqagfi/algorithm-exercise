@@ -13,13 +13,12 @@ int modExp(llu a, llu b){
   llu res = 1;
   if(a == 0 && b == 0) return 1;
   else if(b == 1) return a;
-  a %= mod;
   while(b > 0) {
     if(b & 1) res = (res*a) % mod;
     b >>= 1;
     a = (a*a) % mod;
   }
-  return res % mod;
+  return res;
 }
 
 int main() {
